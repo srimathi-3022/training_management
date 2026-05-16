@@ -25,7 +25,7 @@ async def adding_new_course_in_the_institude(course: Course):
     database.course.insert_one(new_course)
     return {
         "message": "Course added to the institution database successfully",
-        "course": clean(new_course)   # FIX: strip _id before returning
+        "course": clean(new_course)  
     }
 
 
