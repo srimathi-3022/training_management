@@ -101,15 +101,16 @@ Follow this sequence to avoid errors caused by missing references:
 
 ## Error Reference
 
- Status Code ---- Meaning 
- 400 ---- Bad request — duplicate email, already registered, or date already marked 
- 404 ---- Resource not found — trainee, course, registration, or attendance record missing 
- 422 ---- Validation error — missing field, wrong data type, or score out of range 
- 500 ---- Server error — usually a serialization issue with MongoDB 
+| Status Code | Meaning | 
+|---|---|
+|400 | Bad request — duplicate email, already registered, or date already marked |
+|404 | Resource not found — trainee, course, registration, or attendance record missing |
+| 422 | Validation error — missing field, wrong data type, or score out of range |
+|500 | Server error — usually a serialization issue with MongoDB |
 
 
 
-## 📬 Postman Tips
+##  Postman Tips
 
 - Use Body -> raw -> JSON mode for all POST requests; the Content-Type header is set automatically.
 - Field names must exactly match the Pydantic model — for example, use trainee_email not email.
@@ -119,10 +120,10 @@ Follow this sequence to avoid errors caused by missing references:
 
 ##  MongoDB Collections
 
- Collection ---- Description 
-
-trainees ---- Stores trainee profiles 
-courses ---- Stores course details 
-registrations ---- Links trainees to courses 
-attendances ---- Stores attended dates and assessment scores 
+| Collection | Description |
+|----|----|
+|trainees | Stores trainee profiles | 
+|courses | Stores course details |
+|registrations | Links trainees to courses | 
+|attendances | Stores attended dates and assessment scores |
 
