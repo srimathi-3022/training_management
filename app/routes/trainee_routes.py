@@ -40,7 +40,7 @@ async def get_trainee_by_using_trainee_id(trainee_id: int):
     trainee = database.trainee.find_one({"trainee_id": trainee_id})
     if not trainee:
         raise HTTPException(status_code=404, detail="Trainee not found in the institution database please check the ID and try again.")
-    return trainee   # FIX: strip _id before returning
+    return clean(trainee)   # FIX: strip _id before returning
 
 
 # FIX: renamed path param to avoid clash with /{trainee_id} above
